@@ -1,8 +1,8 @@
 {
   "compilerOptions": {
-    "target": "es2016",
+    "target": "ES6",
     "module": "commonjs",
-    "baseUrl": "./src",
+    "baseUrl": "./",
     "resolveJsonModule": true,
     "outDir": "./public",
     "esModuleInterop": true,
