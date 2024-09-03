@@ -4,7 +4,7 @@ import http from 'http';
 import express from 'express';
 import favicon from 'serve-favicon';
 import path from 'path';
-import { readFileSync } from 'fs';
+// import { readFileSync } from 'fs';
 
 dotenv.config();
 
@@ -12,18 +12,18 @@ import { serverCallback } from './utils';
 import { db_query } from './db/pg-connector';
 
 const HTTP_PORT = Number(process.env.HTTP_PORT) || 80;
-const HTTPS_PORT = Number(process.env.HTTPS_PORT) || 443;
-const CERTIFICATE_KEY = process.env.CERTIFICATE_KEY || '';
-const CERTIFICATE_CERT = process.env.CERTIFICATE_CERT || '';
+// const HTTPS_PORT = Number(process.env.HTTPS_PORT) || 443;
+// const CERTIFICATE_KEY = process.env.CERTIFICATE_KEY || '';
+// const CERTIFICATE_CERT = process.env.CERTIFICATE_CERT || '';
 
-export const credentials = {
+/* export const credentials = {
   key: readFileSync(path.join(__dirname, 'certificates', CERTIFICATE_KEY), {
     encoding: 'utf8',
   }),
   cert: readFileSync(path.join(__dirname, 'certificates', CERTIFICATE_CERT), {
     encoding: 'utf8',
   }),
-};
+}; */
 
 const app = express();
 
@@ -65,6 +65,6 @@ app
 
 http.createServer(app).listen(HTTP_PORT, serverCallback('http', HTTP_PORT));
 
-https
+/* https
   .createServer(credentials, app)
-  .listen(HTTPS_PORT, serverCallback('https', HTTPS_PORT));
+  .listen(HTTPS_PORT, serverCallback('https', HTTPS_PORT)); */

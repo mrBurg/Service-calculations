@@ -1,11 +1,11 @@
-ARG NODE_VERSION=20.12.0
+ARG NODE_VERSION=22.7.0
 
-FROM node:${NODE_VERSION}-alpine
+FROM node:${NODE_VERSION}
 
 WORKDIR /usr/src/app
 
-ENV CERTIFICATE_KEY=localhost.key
-ENV CERTIFICATE_CERT=localhost.cert
+# ENV CERTIFICATE_KEY=localhost.key
+# ENV CERTIFICATE_CERT=localhost.cert
 
 COPY package*.json ./
 
