@@ -4,5 +4,6 @@ services:
       context: .
     environment:
       NODE_ENV: production
+    container_name: service-calculations
     ports:
       - 8080:80
